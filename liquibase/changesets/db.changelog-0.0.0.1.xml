@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+    http://www.liquibase.org/xml/ns/pro 
+    http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd 
+    http://www.liquibase.org/xml/ns/dbchangelog 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet author="ARTURO" id="111">
+        <createTable tableName="MASCOTAS">
+            <column autoIncrement="true" name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_1"/>
+            </column>
+            <column name="NOMBRE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RAZA" type="VARCHAR(50)"/>
+            <column name="TAMANO" type="VARCHAR(50)"/>
+            <column name="COLOR" type="VARCHAR(30)"/>
+        </createTable>
+    </changeSet>
+
+
+ <!-- Changelog de una bd existente -->
+ <!-- liquibase --changeLogFile="changesets/db.changelog-0.0.0.1.xml" generateChangeLog -->
+
+ <!-- Diferencias entre bd -->
+ <!-- liquibase --changeLogFile=changesets/diff.txt diffChangeLog --> 
+
+
+</databaseChangeLog>

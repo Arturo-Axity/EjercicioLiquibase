@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+    http://www.liquibase.org/xml/ns/pro 
+    http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd 
+    http://www.liquibase.org/xml/ns/dbchangelog 
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet author="ARTURO" id="222">
+        <createTable tableName="PERSONAS">
+            <column autoIncrement="true" name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_1"/>
+            </column>
+            <column name="NOMBRE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EDAD" type="INT"/>
+            <column name="NACIONALIDAD" type="VARCHAR(50)"/>
+            <column name="EMAIL" type="VARCHAR(30)"/>
+            <column name="TELEFONO" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    
+
+ <!-- Rollback -->
+ <!-- liquibase --changeLogFile="changesets/db.changelog-0.0.0.2.xml" rollbackCount 1 --> -->
+
+
+ <!-- Generar Stored Procedure -->
+    <changeSet author="ARTURO" id="444">
+	    <createProcedure encoding="utf8" procedureName="getPrueba">
+		    CREATE PROCEDURE getPrueba
+                AS
+                BEGIN
+                   SELECT * FROM PERSONAS
+                 END;
+        </createProcedure>
+    </changeSet>
+
+</databaseChangeLog>
